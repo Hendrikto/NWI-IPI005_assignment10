@@ -61,12 +61,16 @@ public class TermTest {
      */
     @Test
     public void testPlus() {
+        int exp = 4;
         System.out.println("plus");
-        Term t = null;
-        Term instance = null;
-        instance.plus(t);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Term instance = new Term(2, exp);
+        instance.plus(instance);
+        assertEquals(instance.getCoef(), 4, 0);
+        instance.plus(new Term(0, exp));
+        assertEquals(instance.getCoef(), 4, 0);
+        instance.plus(new Term(-2, exp));
+        assertEquals(instance.getCoef(), 2, 0);
+        assertEquals(instance.getExp(), exp);
     }
 
     /**
