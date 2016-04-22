@@ -79,11 +79,20 @@ public class TermTest {
     @Test
     public void testTimes() {
         System.out.println("times");
-        Term t = null;
-        Term instance = null;
-        instance.times(t);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Term i1 = new Term(2, 3);
+        Term i2 = new Term(2, 4);
+        i2.times(i1);
+        assertEquals(i2.getCoef(), 4, 0);
+        assertEquals(i2.getExp(), 7);
+        i2 = new Term(0, 1);
+        i2.times(i1);
+        assertEquals(i2.getCoef(), 0, 0);
+        assertEquals(i2.getExp(), 4);
+        i2 = new Term(-1, -1);
+        i2.times(i1);
+        assertEquals(i2.getCoef(), -2, 0);
+        assertEquals(i2.getExp(), 2);
+
     }
 
     /**
