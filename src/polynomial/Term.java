@@ -95,11 +95,11 @@ public class Term {
      * Standard implementation of equality
      */
     @Override
-    public boolean equals(Object may_be_term) {
-        if (may_be_term == null || getClass() != may_be_term.getClass()) {
+    public boolean equals(Object possibleTerm) {
+        if (possibleTerm == null || getClass() != possibleTerm.getClass()) {
             return false;
         } else {
-            Term term = (Term) may_be_term;
+            Term term = (Term) possibleTerm;
             return exponent == term.exponent
                     && coefficient == term.coefficient;
         }
