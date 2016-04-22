@@ -50,12 +50,10 @@ public class TermTest {
     @Test
     public void testGetCoef() {
         System.out.println("getCoef");
-        Term instance = null;
-        double expResult = 0.0;
-        double result = instance.getCoef();
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(new Term(1, 1).getCoef(), 1, 0);
+        assertEquals(new Term(0, 1).getCoef(), 0, 0);
+        assertEquals(new Term(-1, 1).getCoef(), -1, 0);
+        assertEquals(new Term(0.5, 1).getCoef(), 0.5, 0);
     }
 
     /**
