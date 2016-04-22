@@ -115,13 +115,9 @@ public class TermTest {
     @Test
     public void testEquals() {
         System.out.println("equals");
-        Object may_be_term = null;
-        Term instance = null;
-        boolean expResult = false;
-        boolean result = instance.equals(may_be_term);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(new Term(2, 4), new Term(2, 4));
+        assertEquals(new Term(-0, 4), new Term(+0, 4));
+        assertEquals(new Term(2, -0), new Term(2, +0));
     }
 
     /**
