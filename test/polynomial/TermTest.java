@@ -126,12 +126,10 @@ public class TermTest {
     @Test
     public void testScanTerm() {
         System.out.println("scanTerm");
-        Scanner s = null;
-        Term expResult = null;
-        Term result = Term.scanTerm(s);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(Term.scanTerm(new Scanner("2 5")), new Term(2, 5));
+        assertEquals(Term.scanTerm(new Scanner("-2 5")), new Term(-2, 5));
+        assertEquals(Term.scanTerm(new Scanner("2 -5")), new Term(2, -5));
+        assertEquals(Term.scanTerm(new Scanner("0 0")), new Term(0, 0));
     }
 
 }
