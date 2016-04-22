@@ -101,12 +101,11 @@ public class TermTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        Term instance = null;
-        String expResult = "";
-        String result = instance.toString();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(new Term(1, 4).toString(), "1,000000x^4");
+        assertEquals(new Term(1, 1).toString(), "1,000000x");
+        assertEquals(new Term(0, 4).toString(), "0,000000x^4");
+        assertEquals(new Term(1, 0).toString(), "1,000000");
+        assertEquals(new Term(0, 0).toString(), "0,000000");
     }
 
     /**
