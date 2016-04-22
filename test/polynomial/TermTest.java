@@ -39,12 +39,9 @@ public class TermTest {
     @Test
     public void testGetExp() {
         System.out.println("getExp");
-        Term instance = null;
-        int expResult = 0;
-        int result = instance.getExp();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(new Term(1, 1).getExp(), 1);
+        assertEquals(new Term(1, 0).getExp(), 0);
+        assertEquals(new Term(1, -1).getExp(), -1);
     }
 
     /**
