@@ -78,10 +78,11 @@ public class Polynomial {
      *
      * @param b the polynomial to add
      */
-    public void plus(Polynomial b) {
+    public Polynomial plus(Polynomial b) {
         for (Term t : b.terms) {
             this.plus(t);
         }
+        return this;
     }
 
     public void minus(Polynomial b) {
