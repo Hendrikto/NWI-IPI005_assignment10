@@ -86,11 +86,11 @@ public class Polynomial {
     }
 
     @Override
-    public boolean equals(Object other_poly) {
-        if (other_poly == null || other_poly.getClass() != getClass()) {
+    public boolean equals(Object otherPoly) {
+        if (otherPoly == null || otherPoly.getClass() != getClass()) {
             return false;
         } else {
-            Polynomial b = (Polynomial) other_poly;
+            Polynomial b = (Polynomial) otherPoly;
             if (terms.size() != b.terms.size()) {
                 return false;
             }
