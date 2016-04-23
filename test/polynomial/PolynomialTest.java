@@ -38,12 +38,11 @@ public class PolynomialTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        Polynomial instance = new Polynomial();
-        String expResult = "";
-        String result = instance.toString();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(new Polynomial("3.0 1 2 3").toString(), "3,000000x 2,000000x^3");
+        assertEquals(new Polynomial("4 0 5 3").toString(), "4,000000 5,000000x^3");
+        assertEquals(new Polynomial("4 0 -5 3").toString(), "4,000000 -5,000000x^3");
+        assertEquals(new Polynomial("6 1").toString(), "6,000000x");
+        assertEquals(new Polynomial("").toString(), "");
     }
 
     /**
