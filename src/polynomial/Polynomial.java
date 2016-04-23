@@ -87,7 +87,22 @@ public class Polynomial {
 
     @Override
     public boolean equals(Object other_poly) {
-        return false;
+        if (other_poly == null || other_poly.getClass() != getClass()) {
+            return false;
+        } else {
+            Polynomial b = (Polynomial) other_poly;
+            if (terms.size() != b.terms.size()) {
+                return false;
+            }
+            ListIterator<Term> iteratorA = terms.listIterator();
+            ListIterator<Term> iteratorB = b.terms.listIterator();
+            while (iteratorA.hasNext()) {
+                if (!iteratorA.next().equals(iteratorB.next())) {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 
 }
