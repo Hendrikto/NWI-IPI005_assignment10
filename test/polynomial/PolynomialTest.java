@@ -103,13 +103,14 @@ public class PolynomialTest {
     @Test
     public void testEquals() {
         System.out.println("equals");
-        Object other_poly = null;
-        Polynomial instance = new Polynomial();
-        boolean expResult = false;
-        boolean result = instance.equals(other_poly);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Polynomial i = new Polynomial("4 0 -5 3");
+        assertTrue(new Polynomial("").equals(new Polynomial("")));
+        assertTrue(new Polynomial("6 0").equals(new Polynomial("6 0")));
+        assertTrue(i.equals(new Polynomial("4 0 -5 3")));
+        assertTrue(i.equals(i));
+        assertFalse(new Polynomial("").equals(new Polynomial("1 0")));
+        assertFalse(new Polynomial("1 0").equals(new Polynomial("6 0")));
+        assertFalse(i.equals(new Polynomial("4 1 -5 3")));
     }
 
 }
