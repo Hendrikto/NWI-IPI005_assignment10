@@ -2,6 +2,7 @@ package polynomial;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Scanner;
 
 /**
@@ -61,7 +62,15 @@ public class Polynomial {
      */
     @Override
     public String toString() {
-        return null;
+        if (terms.isEmpty()) {
+            return "";
+        }
+        StringBuilder sb = new StringBuilder();
+        ListIterator<Term> i = terms.listIterator();
+        while (i.hasNext()) {
+            sb.append(i.next()).append(' ');
+        }
+        return sb.deleteCharAt(sb.length() - 1).toString();
     }
 
     public void plus(Polynomial b) {
