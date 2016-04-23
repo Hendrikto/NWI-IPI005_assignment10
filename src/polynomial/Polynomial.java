@@ -79,7 +79,7 @@ public class Polynomial {
      * @param b the polynomial to add
      */
     public void plus(Polynomial b) {
-        for (Term t: b.terms) {
+        for (Term t : b.terms) {
             this.plus(t);
         }
     }
@@ -113,7 +113,7 @@ public class Polynomial {
         }
     }
 
-    private void plus (Term b) {
+    private void plus(Term b) {
         ListIterator<Term> i = terms.listIterator();
         Term a;
         while (i.hasNext()) {
