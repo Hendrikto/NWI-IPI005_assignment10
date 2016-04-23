@@ -83,11 +83,11 @@ public class Term {
     @Override
     public String toString() {
         if (exponent == 0) {
-            return String.format("%f", coefficient);
+            return String.format("%+f", coefficient);
         } else if (exponent == 1) {
-            return String.format("%fx", coefficient);
+            return String.format("%+fx", coefficient);
         } else {
-            return String.format("%fx^%d", coefficient, exponent);
+            return String.format("%+fx^%d", coefficient, exponent);
         }
     }
 
