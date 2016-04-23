@@ -73,7 +73,15 @@ public class Polynomial {
         return sb.deleteCharAt(sb.length() - 1).toString();
     }
 
+    /**
+     * Add a polynomial to this.
+     *
+     * @param b the polynomial to add
+     */
     public void plus(Polynomial b) {
+        for (Term t: b.terms) {
+            this.plus(t);
+        }
     }
 
     public void minus(Polynomial b) {
