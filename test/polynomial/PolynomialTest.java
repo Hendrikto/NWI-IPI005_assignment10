@@ -51,11 +51,24 @@ public class PolynomialTest {
     @Test
     public void testPlus() {
         System.out.println("plus");
-        Polynomial b = null;
-        Polynomial instance = new Polynomial();
-        instance.plus(b);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Polynomial i = new Polynomial("1 0");
+        i.plus(new Polynomial(""));
+        assertEquals(i, new Polynomial("1 0"));
+        i.plus(new Polynomial("2 0"));
+        assertEquals(i, new Polynomial("3 0"));
+        i.plus(new Polynomial("-3 0"));
+        assertEquals(i, new Polynomial(""));
+        i.plus(new Polynomial("1 0 5 6"));
+        assertEquals(i, new Polynomial("1 0 5 6"));
+        i = new Polynomial("1 0");
+        i.plus(new Polynomial("1 0 3 4"));
+        assertEquals(i, new Polynomial("2 0 3 4"));
+        i = new Polynomial("1 1");
+        i.plus(new Polynomial("1 0"));
+        assertEquals(i, new Polynomial("1 0 1 1"));
+        i = new Polynomial("1 0 1 1");
+        i.plus(new Polynomial("1 2"));
+        assertEquals(i, new Polynomial("1 0 1 1 1 2"));
     }
 
     /**
