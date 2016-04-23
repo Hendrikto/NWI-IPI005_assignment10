@@ -38,10 +38,10 @@ public class PolynomialTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        assertEquals(new Polynomial("3.0 1 2 3").toString(), "3,000000x 2,000000x^3");
-        assertEquals(new Polynomial("4 0 5 3").toString(), "4,000000 5,000000x^3");
-        assertEquals(new Polynomial("4 0 -5 3").toString(), "4,000000 -5,000000x^3");
-        assertEquals(new Polynomial("6 1").toString(), "6,000000x");
+        assertEquals(new Polynomial("3.0 1 2 3").toString(), "+3,000000x +2,000000x^3");
+        assertEquals(new Polynomial("4 0 5 3").toString(), "+4,000000 +5,000000x^3");
+        assertEquals(new Polynomial("4 0 -5 3").toString(), "+4,000000 -5,000000x^3");
+        assertEquals(new Polynomial("6 1").toString(), "+6,000000x");
         assertEquals(new Polynomial("").toString(), "");
     }
 
