@@ -105,4 +105,24 @@ public class Polynomial {
         }
     }
 
+    private void plus (Term b) {
+        ListIterator<Term> i = terms.listIterator();
+        Term a;
+        while (i.hasNext()) {
+            a = i.next();
+            if (a.getExp() == b.getExp()) {
+                a.plus(b);
+                if (a.getCoef() == 0) {
+                    i.remove();
+                }
+                return;
+            } else if (a.getExp() > b.getExp()) {
+                i.previous();
+                i.add(b);
+                return;
+            }
+        }
+        i.add(b);
+    }
+
 }
