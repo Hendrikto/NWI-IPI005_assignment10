@@ -136,4 +136,10 @@ public class Polynomial {
         i.add(b);
     }
 
+    private void times(Term b) {
+        for (Term a : terms) {
+            a.times(b);
+        }
+    }
+
 }
