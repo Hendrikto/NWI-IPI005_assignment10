@@ -100,6 +100,7 @@ public class PolynomialTest {
         assertEquals(new Polynomial(i).times(new Polynomial("1 0")), i);
         assertEquals(new Polynomial(i).times(new Polynomial("2 0")), new Polynomial("2 2 4 3"));
         assertEquals(new Polynomial(i).times(new Polynomial("1 1")), new Polynomial("1 3 2 4"));
+        assertEquals(new Polynomial(i).times(new Polynomial("-1 0")), new Polynomial("-1 2 -2 3"));
     }
 
     /**
