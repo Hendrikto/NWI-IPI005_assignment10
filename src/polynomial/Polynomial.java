@@ -93,6 +93,7 @@ public class Polynomial {
     }
 
     public void divide(Polynomial b) {
+        // not implemented as per specification
     }
 
     @Override
