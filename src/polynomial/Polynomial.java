@@ -6,8 +6,10 @@ import java.util.ListIterator;
 import java.util.Scanner;
 
 /**
- * A skeleton class for representing Polynomials
+ * A skeleton class for representing Polynomials.
  *
+ * @author Hendrik Werner // s4549775
+ * @author Jasper Haasdijk // s4449754
  * @author Sjaak Smetsers
  * @date 19-04-2016
  */
@@ -86,11 +88,23 @@ public class Polynomial {
         return this;
     }
 
+    /**
+     * Subtract a polynomial from this.
+     *
+     * @param b the polynomial to subtract
+     * @return this
+     */
     public Polynomial minus(Polynomial b) {
         this.plus(new Polynomial(b).times(new Polynomial("-1 0")));
         return this;
     }
 
+    /**
+     * Multiply by a polynomial.
+     *
+     * @param b the polynomial to multiply by
+     * @return this
+     */
     public Polynomial times(Polynomial b) {
         for (Term t : b.terms) {
             this.times(t);
@@ -98,16 +112,33 @@ public class Polynomial {
         return this;
     }
 
+    /**
+     * Divide by a polynomial.
+     *
+     * @param b the polynomial to divide by
+     */
     public void divide(Polynomial b) {
         // not implemented as per specification
     }
 
+    /**
+     * Apply a value for x to the polynomial.
+     *
+     * @param x the value for x
+     * @return the result of the polynomial with respect to x
+     */
     public double apply(double x) {
         return terms.stream()
                 .mapToDouble((a) -> a.apply(x))
                 .sum();
     }
 
+    /**
+     * Check for mathematical equality with another polynomial.
+     *
+     * @param otherPoly the polynomial to check for mathematical equality
+     * @return whether both polynomials are mathematically equal
+     */
     @Override
     public boolean equals(Object otherPoly) {
         if (otherPoly == null || otherPoly.getClass() != getClass()) {
@@ -128,6 +159,11 @@ public class Polynomial {
         }
     }
 
+    /**
+     * Add a term.
+     *
+     * @param b the term to add
+     */
     private void plus(Term b) {
         ListIterator<Term> i = terms.listIterator();
         Term a;
@@ -148,6 +184,11 @@ public class Polynomial {
         i.add(b);
     }
 
+    /**
+     * Multiply by a term.
+     *
+     * @param b the term to multiply by
+     */
     private void times(Term b) {
         for (Term a : terms) {
             a.times(b);
