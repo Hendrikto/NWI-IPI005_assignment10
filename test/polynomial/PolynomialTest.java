@@ -143,4 +143,19 @@ public class PolynomialTest {
         );
     }
 
+    /**
+     * Test of apply method, of class Polynomial.
+     */
+    @Test
+    public void testApply() {
+        System.out.println("apply");
+        assertEquals(new Polynomial("").apply(7.0), 0.0, 0.0);
+        assertEquals(new Polynomial("1 2").apply(-1.0), 1.0, 0.0);
+        assertEquals(new Polynomial("-8 0 2 1 -4 3 3 4").apply(2.0), 12.0, 0.0);
+        assertEquals(
+                new Polynomial("2 0").apply(2.0),
+                new Polynomial("2 0").apply(0.0), 0.0
+        );
+    }
+
 }
