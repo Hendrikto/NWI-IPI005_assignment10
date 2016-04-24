@@ -71,7 +71,9 @@ public class PolynomialTest {
         assertEquals(i, new Polynomial("1 0 1 1 1 2"));
         Polynomial a = new Polynomial("4 2 -3 3");
         Polynomial b = new Polynomial("2 1 1 2");
+        Polynomial c = new Polynomial("1 3");
         assertEquals(new Polynomial(a).plus(b), new Polynomial(b).plus(a));
+        assertEquals(new Polynomial(a).plus(b).plus(c), new Polynomial(b).plus(c).plus(a));
     }
 
     /**
