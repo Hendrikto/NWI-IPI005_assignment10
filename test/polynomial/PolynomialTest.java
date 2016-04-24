@@ -127,4 +127,20 @@ public class PolynomialTest {
         assertFalse(i.equals(new Polynomial("4 1 -5 3")));
     }
 
+    /**
+     * Test of distributivity. Involves the plus and times methods.
+     */
+    @Test
+    public void testDistributivity() {
+        System.out.println("distributivity");
+        Polynomial a = new Polynomial("-1 2");
+        Polynomial b = new Polynomial("3 2");
+        Polynomial c = new Polynomial("2 2");
+        assertEquals(
+                new Polynomial(a).times(new Polynomial(b).plus(c)),
+                new Polynomial(new Polynomial(a).times(b))
+                        .plus(new Polynomial(a).times(c))
+        );
+    }
+
 }
