@@ -101,11 +101,11 @@ public class TermTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        assertEquals(new Term(1, 4).toString(), "1,000000x^4");
-        assertEquals(new Term(1, 1).toString(), "1,000000x");
-        assertEquals(new Term(0, 4).toString(), "0,000000x^4");
-        assertEquals(new Term(1, 0).toString(), "1,000000");
-        assertEquals(new Term(0, 0).toString(), "0,000000");
+        assertEquals(new Term(1, 4).toString(), "+1,000000x^4");
+        assertEquals(new Term(1, 1).toString(), "+1,000000x");
+        assertEquals(new Term(0, 4).toString(), "+0,000000x^4");
+        assertEquals(new Term(1, 0).toString(), "+1,000000");
+        assertEquals(new Term(0, 0).toString(), "+0,000000");
     }
 
     /**
