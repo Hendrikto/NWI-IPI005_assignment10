@@ -5,6 +5,8 @@ import java.util.Scanner;
 /**
  * For representing terms in a polynomial.
  *
+ * @author Hendrik Werner // s4549775
+ * @author Jasper Haasdijk // s4449754
  * @author Sjaak Smetsers
  * @date 19-04-2016
  */
@@ -74,6 +76,12 @@ public class Term {
         coefficient *= t.coefficient;
     }
 
+    /**
+     * Apply this term to a specific value for x.
+     *
+     * @param x the value of x
+     * @return this term applied to the value of x
+     */
     public double apply(double x) {
         return coefficient * Math.pow(x, exponent);
     }
@@ -96,7 +104,10 @@ public class Term {
     }
 
     /**
-     * Standard implementation of equality
+     * Standard implementation of equality.
+     *
+     * @param possibleTerm the term to compare to
+     * @return whether the supplied term is equal to this
      */
     @Override
     public boolean equals(Object possibleTerm) {
