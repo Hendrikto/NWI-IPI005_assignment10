@@ -82,11 +82,10 @@ public class PolynomialTest {
     @Test
     public void testMinus() {
         System.out.println("minus");
-        Polynomial b = null;
-        Polynomial instance = new Polynomial();
-        instance.minus(b);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Polynomial i = new Polynomial("3 0 -1 3");
+        assertEquals(new Polynomial(i).minus(i), new Polynomial(""));
+        assertEquals(new Polynomial(i).minus(new Polynomial("-1 3")), new Polynomial("3 0"));
+        assertEquals(new Polynomial(i).minus(new Polynomial("1 0")), new Polynomial("2 0 -1 3"));
     }
 
     /**
