@@ -10,7 +10,8 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Hendrik
+ * @author Hendrik Werner // s4549775
+ * @author Jasper Haasdijk // s4449754
  */
 public class TermTest {
 
