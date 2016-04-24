@@ -77,6 +77,7 @@ public class Polynomial {
      * Add a polynomial to this.
      *
      * @param b the polynomial to add
+     * @return this
      */
     public Polynomial plus(Polynomial b) {
         for (Term t : b.terms) {
