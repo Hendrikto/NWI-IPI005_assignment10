@@ -95,11 +95,11 @@ public class PolynomialTest {
     @Test
     public void testTimes() {
         System.out.println("times");
-        Polynomial b = null;
-        Polynomial instance = new Polynomial();
-        instance.times(b);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Polynomial i = new Polynomial("1 2 2 3");
+        assertEquals(i, i);
+        assertEquals(new Polynomial(i).times(new Polynomial("1 0")), i);
+        assertEquals(new Polynomial(i).times(new Polynomial("2 0")), new Polynomial("2 2 4 3"));
+        assertEquals(new Polynomial(i).times(new Polynomial("1 1")), new Polynomial("1 3 2 4"));
     }
 
     /**
