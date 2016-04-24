@@ -131,4 +131,16 @@ public class TermTest {
         assertEquals(Term.scanTerm(new Scanner("0 0")), new Term(0, 0));
     }
 
+    /**
+     * Test of apply method, of class Term.
+     */
+    @Test
+    public void testApply() {
+        System.out.println("apply");
+        assertEquals(new Term(1, 3).apply(0.0), 0.0, 0);
+        assertEquals(new Term(1, 3).apply(2.0), 8.0, 0);
+        assertEquals(new Term(1, 0).apply(2.0), 1.0, 0);
+        assertEquals(new Term(1, 0).apply(0.0), 1.0, 0);
+    }
+
 }
