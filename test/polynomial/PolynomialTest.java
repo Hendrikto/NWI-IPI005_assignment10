@@ -156,6 +156,10 @@ public class PolynomialTest {
                 new Polynomial("2 0").apply(2.0),
                 new Polynomial("2 0").apply(0.0), 0.0
         );
+        assertEquals(
+                new Polynomial("1 2").apply(1.0),
+                new Polynomial("1 2").apply(-1.0), 0.0
+        );
     }
 
 }
