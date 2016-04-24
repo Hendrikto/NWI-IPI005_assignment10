@@ -102,6 +102,12 @@ public class Polynomial {
         // not implemented as per specification
     }
 
+    public double apply(double x) {
+        return terms.stream()
+                .mapToDouble((a) -> a.apply(x))
+                .sum();
+    }
+
     @Override
     public boolean equals(Object otherPoly) {
         if (otherPoly == null || otherPoly.getClass() != getClass()) {
