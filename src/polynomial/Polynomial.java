@@ -86,7 +86,9 @@ public class Polynomial {
         return this;
     }
 
-    public void minus(Polynomial b) {
+    public Polynomial minus(Polynomial b) {
+        this.plus(new Polynomial(b).times(new Polynomial("-1 0")));
+        return this;
     }
 
     public Polynomial times(Polynomial b) {
