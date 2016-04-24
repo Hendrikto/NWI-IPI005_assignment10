@@ -74,6 +74,10 @@ public class Term {
         coefficient *= t.coefficient;
     }
 
+    public double apply(double x) {
+        return coefficient * Math.pow(x, exponent);
+    }
+
     /**
      * Converts a term into a readable representation the standard format is
      * %fx^%d
