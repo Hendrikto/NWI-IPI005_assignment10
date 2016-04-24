@@ -89,7 +89,11 @@ public class Polynomial {
     public void minus(Polynomial b) {
     }
 
-    public void times(Polynomial b) {
+    public Polynomial times(Polynomial b) {
+        for (Term t : b.terms) {
+            this.times(t);
+        }
+        return this;
     }
 
     public void divide(Polynomial b) {
